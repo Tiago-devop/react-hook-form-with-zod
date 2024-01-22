@@ -46,7 +46,9 @@ export default function App() {
       {errors.password && (
         <p style={{ color: "red" }}>{errors.password.message}</p>
       )}
-      <button type="submit">Submit</button>
+      <button disabled={isSubmitting} type="submit">
+        {isSubmitting ? "Submitting..." : "Submit"}
+      </button>
     </form>
   );
 }
